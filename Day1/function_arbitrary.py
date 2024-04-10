@@ -21,3 +21,19 @@ assert concat('earth', 'mars', 'venus') == 'earth/mars/venus'
 assert concat('earth', 'mars', 'venus', sep='.') == 'earth.mars.venus'
 
 
+# Normal call withh separate arguments: 
+def test(): 
+    assert list(range(3,6)) == [3,4,5]
+
+# call with arguments unpacked from a list. 
+arguments_list = [3,7]
+assert list(range(*arguments_list)) == [3,4,5]
+
+# In the same fashion, dictionaries can deliver keyword arguemnts with the ** operator:
+def function_that_receives_names(first_word, second_word): 
+    return first_word + ',' + second_word + '!'
+
+argument_dictionary = {'first_word: ': 'Hello', 'second_word': 'world'}
+assert function_that_receives_names(**argument_dictionary) == 'Hello, world'
+
+
